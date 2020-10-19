@@ -26,6 +26,7 @@
             android:name=".app.administrador.MenuPrincipalAdministrador"
             android:label="@string/title_activity_menu_principal_administrador"
             android:theme="@style/NoActionBar" />
+        <activity android:name=".app.administrador.fragmet.MantenimientoCliente" />
         <activity android:name=".app.cliente.PrincipalCliente" />
         <activity android:name=".app.recepcionista.PrincipalRecepcionista" />
         <activity android:name=".app.administrador.PrincipalAdministrador" />

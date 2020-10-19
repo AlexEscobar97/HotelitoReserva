@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -20,6 +22,7 @@ import com.example.hotelitoreservacionfacilito.R;
 import com.example.hotelitoreservacionfacilito.adapters.RecyclerClientes;
 import com.example.hotelitoreservacionfacilito.models.Cliente;
 import com.example.hotelitoreservacionfacilito.service.ClienteService;
+import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,6 +46,8 @@ public class Clientes extends Fragment {
     RecyclerView rvClientes;
 
     ClientesTask clientesTask = new ClientesTask();
+
+
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -83,8 +88,9 @@ public class Clientes extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_clientes, container, false);
+        final View view = inflater.inflate(R.layout.fragment_clientes, container, false);
 
+        final NavigationView navigationView = view.findViewById(R.id.nav_view);
 
         tvTitulo = view.findViewById(R.id.tvTitulo);
         btnAgregarCliente = view.findViewById(R.id.btnAgregarCliente);
@@ -92,16 +98,26 @@ public class Clientes extends Fragment {
 
         clientesTask.execute();
 
+        //final NavController navController = Navigation.findNavController(view.findViewById(R.id.nav_host_fragment));
+        //final NavController navController = Navigation.findNavController(view.findViewById(R.id.mobile_navigation));
+
+        return view;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+
         final NavController navController = Navigation.findNavController(view);
 
         btnAgregarCliente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 navController.navigate(R.id.mantenimientoCliente);
+                //navigationView.findViewById(R.id.mobile_navigation).getContext().startActivity(); Se puede ocupar
+
             }
         });
 
-        return view;
     }
 
     public void reinicarAsysnc(){
@@ -133,7 +149,7 @@ public class Clientes extends Fragment {
             super.onPostExecute(clientes);
             try {
                 if(!clientes.isEmpty()){
-                    RecyclerClientes adapter = new RecyclerClientes(clientes, getContext());
+                    RecyclerClientes adapter = new RecyclerClientes(clientes, getParentFragment());
                     rvClientes.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false));
                     rvClientes.setAdapter(adapter);
                 }

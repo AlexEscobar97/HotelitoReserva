@@ -16,5 +16,9 @@
             android:id="@+id/nav_promociones"
             android:icon="@drawable/mejorprecio"
             android:title="Promociones" />
+        <item
+            android:id="@+id/fragment_clientes"
+            android:icon="@drawable/empleado"
+            android:title="Clientes" />
     </group>
 </menu>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_empleados"
+            android:icon="@drawable/empleado"
+            android:title="Empleados" />
+        <item
+            android:id="@+id/nav_habitaciones"
+            android:icon="@drawable/cuarto"
+            android:title="Habitaciones" />
+        <item
+            android:id="@+id/nav_promociones"
+            android:icon="@drawable/mejorprecio"
+            android:title="Promociones" />
+    </group>
+</menu>

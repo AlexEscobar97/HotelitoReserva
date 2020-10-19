@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_empleados">
+
+    <fragment
+        android:id="@+id/nav_empleados"
+        android:name="com.example.hotelitoreservacionfacilito.app.administrador.fragmet.EmpleadoAdmin"
+        android:label="@string/menu_empleados"
+        tools:layout="@layout/fragment_empleados_admin">
+
+        <action
+            android:id="@+id/action_HomeFragment_to_HomeSecondFragment"
+            app:destination="@id/nav_home_second" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_home_second"
+        android:name="com.example.hotelitoreservacionfacilito.app.administrador.fragmet.EmpleadoAdmin"
+        android:label="@string/home_second"
+        tools:layout="@layout/fragment_empleados_admin">
+        <action
+            android:id="@+id/action_HomeSecondFragment_to_HomeFragment"
+            app:destination="@id/nav_empleados" />
+
+        <argument
+            android:name="myArg"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_nav_home_second_to_nav_habitaciones"
+            app:destination="@id/nav_habitaciones" />
+        <action
+            android:id="@+id/action_nav_home_second_to_nav_promociones"
+            app:destination="@id/nav_promociones" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_habitaciones"
+        android:name="com.example.hotelitoreservacionfacilito.app.administrador.fragmet.HabitacionesAdmin"
+        android:label="@string/menu_habitaciones"
+        tools:layout="@layout/fragment_habitaciones_admin" />
+
+    <fragment
+        android:id="@+id/nav_promociones"
+        android:name="com.example.hotelitoreservacionfacilito.app.administrador.fragmet.PromocionesAdmin"
+        android:label="@string/menu_promociones"
+        tools:layout="@layout/fragment_promociones_admin" />
+</navigation>

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "801158882211",
+    "firebase_url": "https://hotelito-reserva-1601601307931.firebaseio.com",
+    "project_id": "hotelito-reserva-1601601307931",
+    "storage_bucket": "hotelito-reserva-1601601307931.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:801158882211:android:594eaab2bb59172e0f3016",
+        "android_client_info": {
+          "package_name": "com.example.hotelitoreservacionfacilito"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "801158882211-8gpplpjodm34nfqh2gq061cjsghp5h3c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hotelitoreservacionfacilito",
+            "certificate_hash": "2cdcf711a4429e772a3cac6d792c5569ba9ede93"
+          }
+        },
+        {
+          "client_id": "801158882211-g92kte2doa2ddce77ltur8h439acsi07.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCREQeymmauY0YpcHy-RCbgMpcElo8HXnc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "801158882211-g92kte2doa2ddce77ltur8h439acsi07.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

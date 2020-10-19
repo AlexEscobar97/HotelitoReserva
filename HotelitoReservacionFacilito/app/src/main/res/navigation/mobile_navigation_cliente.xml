@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation_cliente"
+    app:startDestination="@id/nav_habitacionesclientes">
+
+    <fragment
+        android:id="@+id/nav_habitacionesclientes"
+        android:name="com.example.hotelitoreservacionfacilito.app.cliente.fragmet.HabitacionesCliente"
+        android:label="Habitaciones"
+        tools:layout="@layout/fragment_habitaciones_cliente" />
+    <fragment
+        android:id="@+id/nav_promocionesclientes"
+        android:name="com.example.hotelitoreservacionfacilito.app.cliente.fragmet.PromocionesClientes"
+        android:label="Promociones"
+        tools:layout="@layout/fragment_promociones_clientes" />
+</navigation>

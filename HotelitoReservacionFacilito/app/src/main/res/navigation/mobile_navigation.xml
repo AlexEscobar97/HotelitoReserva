@@ -33,6 +33,9 @@
         <action
             android:id="@+id/action_nav_home_second_to_nav_promociones"
             app:destination="@id/nav_promociones" />
+        <action
+            android:id="@+id/action_nav_home_second_to_fragment_clientes"
+            app:destination="@id/fragment_clientes" />
     </fragment>
 
     <fragment
@@ -46,4 +49,18 @@
         android:name="com.example.hotelitoreservacionfacilito.app.administrador.fragmet.PromocionesAdmin"
         android:label="@string/menu_promociones"
         tools:layout="@layout/fragment_promociones_admin" />
+    <fragment
+        android:id="@+id/fragment_clientes"
+        android:name="com.example.hotelitoreservacionfacilito.app.administrador.fragmet.Clientes"
+        android:label="fragment_clientes"
+        tools:layout="@layout/fragment_clientes" >
+        <action
+            android:id="@+id/action_fragment_clientes_to_mantenimientoCliente"
+            app:destination="@id/mantenimientoCliente" />
+    </fragment>
+    <fragment
+        android:id="@+id/mantenimientoCliente"
+        android:name="com.example.hotelitoreservacionfacilito.app.administrador.fragmet.MantenimientoCliente"
+        android:label="fragment_mantenimiento_cliente"
+        tools:layout="@layout/fragment_mantenimiento_cliente" />
 </navigation>

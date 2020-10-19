@@ -2,7 +2,7 @@ package com.example.hotelitoreservacionfacilito.service;
 
 public class Constantes {
 
-    public static final String DOMINIO = "http://70.37.93.201:80";
+    public static final String DOMINIO = "http://104.214.65.98:80";
 
     public static final String URL_CLIENTE = DOMINIO + "/cliente";
     public static final String URL_CUENTA = DOMINIO + "/cuenta";

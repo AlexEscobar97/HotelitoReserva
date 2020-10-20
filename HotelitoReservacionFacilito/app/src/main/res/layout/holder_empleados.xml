@@ -11,7 +11,7 @@
         android:orientation="vertical">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardView"
+            android:id="@+id/cardViewEmpleado"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -20,7 +20,7 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:id="@+id/iVFoto"
+                    android:id="@+id/iVFotoEmpleado"
                     android:layout_width="50dp"
                     android:layout_height="47dp"
                     android:layout_marginStart="32dp"
@@ -32,22 +32,22 @@
                     tools:srcCompat="@tools:sample/avatars" />
 
                 <TextView
-                    android:id="@+id/tvNombreCliente"
+                    android:id="@+id/tvNombreEmpleado"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
                     android:text="Josue Vasquez"
-                    app:layout_constraintStart_toEndOf="@+id/iVFoto"
-                    app:layout_constraintTop_toTopOf="@+id/iVFoto" />
+                    app:layout_constraintStart_toEndOf="@+id/iVFotoEmpleado"
+                    app:layout_constraintTop_toTopOf="@+id/iVFotoEmpleado" />
 
                 <TextView
-                    android:id="@+id/tvTelefono"
+                    android:id="@+id/tvTelefonoEmpleado"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="2257777"
-                    app:layout_constraintStart_toStartOf="@+id/tvNombreCliente"
-                    app:layout_constraintTop_toBottomOf="@+id/tvNombreCliente" />
+                    app:layout_constraintStart_toStartOf="@+id/tvNombreEmpleado"
+                    app:layout_constraintTop_toBottomOf="@+id/tvNombreEmpleado" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
     </LinearLayout>

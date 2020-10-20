@@ -61,6 +61,6 @@
     <fragment
         android:id="@+id/mantenimientoCliente"
         android:name="com.example.hotelitoreservacionfacilito.app.administrador.fragmet.MantenimientoCliente"
-        android:label="fragment_mantenimiento_cliente"
+        android:label="Clientes"
         tools:layout="@layout/fragment_mantenimiento_cliente" />
 </navigation>

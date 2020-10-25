@@ -38,8 +38,8 @@ public class RecyclerEmpleados extends RecyclerView.Adapter<RecyclerEmpleados.Vi
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerEmpleados.ViewHolder holder, int position) {
-        //holder.asignarDatos(lista.get(position));
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+         holder.asignarDatos(lista.get(position));
     }
 
     @Override
@@ -57,14 +57,16 @@ public class RecyclerEmpleados extends RecyclerView.Adapter<RecyclerEmpleados.Vi
             super(itemView);
             cardView = itemView.findViewById(R.id.cardViewEmpleado);
             iVFoto = itemView.findViewById(R.id.iVFotoEmpleado);
-            tvNombreEmpleado = itemView.findViewById(R.id.tvNombreCliente);
+            tvNombreEmpleado = itemView.findViewById(R.id.tvNombreEmpleado);
             tvTelefono = itemView.findViewById(R.id.tvTelefonoEmpleado);
         }
 
         public void asignarDatos(final UsuarioEmpleado usuarioEmpleado){
 
             iVFoto.setImageResource(R.drawable.logocircle);
-            tvNombreEmpleado.setText(usuarioEmpleado.getPersonal().getNombre() + " " +usuarioEmpleado.getPersonal().getApellido());
+            String nombre = usuarioEmpleado.getPersonal().getNombre();
+            System.out.println(nombre);
+            tvNombreEmpleado.setText(usuarioEmpleado.getPersonal().getNombre()+" "+usuarioEmpleado.getPersonal().getApellido());
             tvTelefono.setText(usuarioEmpleado.getUsuario());
         }
 

@@ -14,6 +14,9 @@
         <action
             android:id="@+id/action_HomeFragment_to_HomeSecondFragment"
             app:destination="@id/nav_home_second" />
+        <action
+            android:id="@+id/action_nav_empleados_to_mantenomientoAEmpleado"
+            app:destination="@id/mantenomientoAEmpleado" />
     </fragment>
     <fragment
         android:id="@+id/nav_home_second"
@@ -52,7 +55,7 @@
     <fragment
         android:id="@+id/fragment_clientes"
         android:name="com.example.hotelitoreservacionfacilito.app.administrador.fragmet.Clientes"
-        android:label="fragment_clientes"
+        android:label="Clientes"
         tools:layout="@layout/fragment_clientes" >
         <action
             android:id="@+id/action_fragment_clientes_to_mantenimientoCliente"
@@ -61,6 +64,11 @@
     <fragment
         android:id="@+id/mantenimientoCliente"
         android:name="com.example.hotelitoreservacionfacilito.app.administrador.fragmet.MantenimientoCliente"
-        android:label="Clientes"
+        android:label="Mantenimientos Clientes"
         tools:layout="@layout/fragment_mantenimiento_cliente" />
+    <fragment
+        android:id="@+id/mantenomientoAEmpleado"
+        android:name="com.example.hotelitoreservacionfacilito.app.administrador.fragmet.MantenomientoAEmpleado"
+        android:label="Agregar Empleado"
+        tools:layout="@layout/fragment_mantenomiento_a_empleado" />
 </navigation>

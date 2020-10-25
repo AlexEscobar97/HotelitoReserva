@@ -15,9 +15,11 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.hotelitoreservacionfacilito.R;
+import com.example.hotelitoreservacionfacilito.adapters.RecyclerEmpleados;
 import com.example.hotelitoreservacionfacilito.models.UsuarioEmpleado;
 import com.example.hotelitoreservacionfacilito.service.UsuarioEmpleadoService;
 import com.google.android.material.navigation.NavigationView;
@@ -42,9 +44,10 @@ public class EmpleadoAdmin extends Fragment {
         final NavigationView navigationView = view.findViewById(R.id.nav_view);
 
         tvTituloEmpleado = view.findViewById(R.id.tvTitulo);
-        btnAgregarEmpleado = view.findViewById(R.id.btnAgregarCliente);
-        rvEmpleados = view.findViewById(R.id.rvClientes);
+        btnAgregarEmpleado = view.findViewById(R.id.btnAgregarEmpleado);
+        rvEmpleados = view.findViewById(R.id.rvEmpleados);
 
+        empleadoTask.execute();
         return view;
 
     }
@@ -57,11 +60,12 @@ public class EmpleadoAdmin extends Fragment {
         btnAgregarEmpleado.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //navController.navigate(R.id.mantenimientoCliente);
+                navController.navigate(R.id.mantenomientoAEmpleado);
                 //navigationView.findViewById(R.id.mobile_navigation).getContext().startActivity(); Se puede ocupar
 
             }
         });
+
 
     }
 
@@ -95,10 +99,13 @@ public class EmpleadoAdmin extends Fragment {
             super.onPostExecute(usuarioEmpleados);
             try {
                 if(!usuarioEmpleados.isEmpty()){
-
+                    RecyclerEmpleados adapter = new RecyclerEmpleados(usuarioEmpleados, getParentFragment());
+                    rvEmpleados.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false));
+                    rvEmpleados.setAdapter(adapter);
                 }
-            }catch (Exception e){
-
+                reiniciarAsysnc();
+            }catch (Throwable throwable){
+                System.out.println("Error al imprimir la lista de Empleados: " +throwable.getMessage());
             }
         }
     }

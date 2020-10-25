@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".app.administrador.fragmet.MantenomientoAEmpleado"
+    android:padding="5dp">
+
+    <TextView
+        android:id="@+id/tvTituloEmplead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Agregar Empleados"
+        android:textSize="25dp"
+        android:textColor="@color/colorPrimary"
+        android:shadowColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="262dp"
+        android:layout_height="303dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="24dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTituloEmplead">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:startIconDrawable="@drawable/cajatextouser"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtNombreEmpleado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nombre Cliente"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:startIconDrawable="@drawable/cajatextouser"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtApellidoEmpleado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Apellido Cliente" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:startIconDrawable="@drawable/cajatextorol"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtCorreoEmpleado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Rol de Empleado"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:startIconDrawable="@drawable/cajatextouser"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtUsuarioEmpleado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Usuario" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:startIconDrawable="@drawable/cajatextopassword"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtClaveEmpleado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Clave" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnAgregarEmpleado"
+        android:layout_width="183dp"
+        android:layout_height="48dp"
+        android:background="@drawable/botonagregar"
+        android:text="Agregar"
+        android:textColor="#fff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout >

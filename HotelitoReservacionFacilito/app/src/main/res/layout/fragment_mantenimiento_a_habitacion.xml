@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".app.administrador.fragmet.MantenimientoAHabitacion"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/tvTituloHabitacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Agregar Habitacion"
+            android:textSize="25dp"
+            android:textColor="@color/colorPrimary"
+            android:shadowColor="#000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.503"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="299dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="24dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTituloHabitacion">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            app:startIconDrawable="@drawable/chabitacion">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtNombreEmpleado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nombre Habitacion" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/estadoHabitacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Estado Habitacion"
+            app:startIconDrawable="@drawable/chabitacion">
+            <Spinner
+                android:id="@+id/spinnerEstado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/OpcionEstado"
+                tools:layout_editor_absoluteX="1dp"
+                tools:layout_editor_absoluteY="392dp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tipohabitacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tipo de Habitacion"
+            app:startIconDrawable="@drawable/chabitacion">
+            <Spinner
+                android:id="@+id/spinnerTipoHabitacion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/OpcionEmpleado"
+                tools:layout_editor_absoluteX="1dp"
+                tools:layout_editor_absoluteY="392dp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    </LinearLayout>
+
+        <Button
+            android:id="@+id/btnAgregarEmpleado"
+            android:layout_width="183dp"
+            android:layout_height="48dp"
+            android:background="@drawable/botonagregar"
+            android:text="Agregar"
+            android:textColor="#fff"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.503"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+            app:layout_constraintVertical_bias="0.172" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout >

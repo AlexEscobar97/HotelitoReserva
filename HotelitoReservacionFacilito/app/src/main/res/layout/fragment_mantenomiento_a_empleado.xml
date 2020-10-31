@@ -23,8 +23,8 @@
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="262dp"
-        android:layout_height="303dp"
+        android:layout_width="267dp"
+        android:layout_height="367dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="24dp"
@@ -36,22 +36,21 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:startIconDrawable="@drawable/cajatextouser"
-            >
+            android:padding="5dp"
+            app:startIconDrawable="@drawable/cajatextouser">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edtNombreEmpleado"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Nombre Cliente"
-                />
+                android:hint="Nombre Cliente" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:startIconDrawable="@drawable/cajatextouser"
-            >
+            android:padding="5dp"
+            app:startIconDrawable="@drawable/cajatextouser">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edtApellidoEmpleado"
@@ -61,24 +60,27 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/rol"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:startIconDrawable="@drawable/cajatextorol"
-            >
+            android:hint="Rol"
+            app:startIconDrawable="@drawable/cajatextorol">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edtCorreoEmpleado"
+            <Spinner
+                android:id="@+id/spinnerrol"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Rol de Empleado"
-                />
+                android:entries="@array/OpcionEmpleado"
+                tools:layout_editor_absoluteX="1dp"
+                tools:layout_editor_absoluteY="392dp" />
+
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:startIconDrawable="@drawable/cajatextouser"
-            >
+            android:padding="5dp"
+            app:startIconDrawable="@drawable/cajatextouser">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edtUsuarioEmpleado"
@@ -90,13 +92,17 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="5dp"
             app:startIconDrawable="@drawable/cajatextopassword"
+            android:focusable="false"
+            app:passwordToggleEnabled="true"
             >
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edtClaveEmpleado"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:inputType="textPassword"
                 android:hint="Clave" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -111,9 +117,10 @@
         android:textColor="#fff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
-
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintVertical_bias="0.172" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout >

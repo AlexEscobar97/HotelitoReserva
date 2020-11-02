@@ -26,7 +26,7 @@
         android:layout_width="match_parent"
         android:layout_height="299dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="25dp"
         android:layout_marginEnd="24dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -40,19 +40,21 @@
             app:startIconDrawable="@drawable/chabitacion">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edtNombreEmpleado"
+                android:id="@+id/edtNombreHabitacion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Nombre Habitacion" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/estadoHabitacion"
+        <TextView
+            android:id="@+id/textView4"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Estado Habitacion"
-            app:startIconDrawable="@drawable/chabitacion">
-            <Spinner
+            android:layout_height="30dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="15dp"
+            android:textColor="#000000"
+            android:text="Estado de Habitacion" />
+        <Spinner
                 android:id="@+id/spinnerEstado"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -60,29 +62,26 @@
                 tools:layout_editor_absoluteX="1dp"
                 tools:layout_editor_absoluteY="392dp" />
 
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tipohabitacion"
+        <TextView
+            android:id="@+id/textView5"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Tipo de Habitacion"
-            app:startIconDrawable="@drawable/chabitacion">
+            android:layout_height="30dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="15dp"
+            android:textColor="#000000"
+            android:text="Categoria de Habitacion" />
+
             <Spinner
                 android:id="@+id/spinnerTipoHabitacion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:entries="@array/OpcionEmpleado"
                 tools:layout_editor_absoluteX="1dp"
                 tools:layout_editor_absoluteY="392dp" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
 
     </LinearLayout>
 
         <Button
-            android:id="@+id/btnAgregarEmpleado"
+            android:id="@+id/btnAgregarhabitacion"
             android:layout_width="183dp"
             android:layout_height="48dp"
             android:background="@drawable/botonagregar"

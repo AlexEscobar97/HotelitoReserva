@@ -78,6 +78,6 @@
     <fragment
         android:id="@+id/mantenimientoAHabitacion"
         android:name="com.example.hotelitoreservacionfacilito.app.administrador.fragmet.MantenimientoAHabitacion"
-        android:label="fragment_mantenimiento_a_habitacion"
+        android:label="Agregar Habitacion"
         tools:layout="@layout/fragment_mantenimiento_a_habitacion" />
 </navigation>

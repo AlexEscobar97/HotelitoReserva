@@ -6,7 +6,6 @@ public class Habitacion{
 	private int idHabitacion;
 	private String nombreHabitacion;
 	private int estadoHabitacion;
-
 	private TipoHabitacion tipoHabitacion;	
 	
 	public Habitacion() {

@@ -19,7 +19,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
     <Button
-        android:id="@+id/btnAgregarHabitacion"
+        android:id="@+id/btnAgregarHabitacionesss"
         android:layout_width="56dp"
         android:layout_height="41dp"
         android:layout_marginStart="20dp"

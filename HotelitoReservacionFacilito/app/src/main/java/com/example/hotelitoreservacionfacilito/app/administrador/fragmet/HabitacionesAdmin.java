@@ -43,7 +43,7 @@ public class HabitacionesAdmin extends Fragment {
         //return inflater.inflate(R.layout.fragment_habitaciones_admin, container, false);
         final View view = inflater.inflate(R.layout.fragment_habitaciones_admin, container, false);
         tvTituloHabitacion = view.findViewById(R.id.tvTituloHabitacion);
-        btnAgregarHabitacion = view.findViewById(R.id.btnAgregarHabitacion);
+        btnAgregarHabitacion = view.findViewById(R.id.btnAgregarHabitacionesss);
         rvhabitacion = view.findViewById(R.id.rvhabitacion);
 
        habitacionestask.execute();

@@ -82,7 +82,14 @@ public class MantenimientoCliente extends Fragment {
 
         //idCliente = getActivity().getIntent().getIntExtra("id", 0);
         //idCliente = datosRecuperados.getInt("idCliente");
-        idCliente = getArguments().getInt("idCliente");
+        /*idCliente = getArguments().getInt("idCliente");
+        try {
+            idCliente = getArguments().getInt("idCliente" , 0);
+        }catch (Exception e){
+            idCliente = 0;
+        }finally {
+            idCliente = 0;
+        }*/
 
         edtNombre = view.findViewById(R.id.edtNombre);
         edtApellido = view.findViewById(R.id.edtApellido);
@@ -95,12 +102,13 @@ public class MantenimientoCliente extends Fragment {
         btnAgregar = view.findViewById(R.id.btnAgregar);
         btnEditar = view.findViewById(R.id.btnEditar);
 
-        if(idCliente != 0) {
+        /*if(idCliente != 0) {
             clienteById.execute();
             btnAgregar.setEnabled(false);
         }else{
             btnEditar.setEnabled(false);
-        }
+        }*/
+        btnEditar.setEnabled(false);
 
         btnAgregar.setOnClickListener(new View.OnClickListener() {
             @Override

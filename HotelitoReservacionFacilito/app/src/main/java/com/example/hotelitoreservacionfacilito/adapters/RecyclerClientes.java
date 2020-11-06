@@ -88,8 +88,9 @@ public class RecyclerClientes extends RecyclerView.Adapter<RecyclerClientes.View
 
                     fragmentManager
                             .beginTransaction()
-                            .replace(R.id.nav_host_fragment, mantenimientoCliente)
-                            .setPrimaryNavigationFragment(mantenimientoCliente).commit();
+                            .replace(R.id.contenedor, mantenimientoCliente)
+                            .addToBackStack(null)
+                            .commit();
                             //.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
                             //.commit();
 

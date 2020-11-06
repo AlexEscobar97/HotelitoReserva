@@ -66,7 +66,7 @@ public class RecycleHabitacion extends RecyclerView.Adapter<RecycleHabitacion.Vi
         }
 
         public void asignarDatos(final Habitacion habitacion){
-            cardHeaderImg_right.setImageResource(R.drawable.chabitacion);
+            cardHeaderImg_right.setImageResource(R.drawable.pruebahabitacion);
             TituloHabitacion.setText(habitacion.getNombreHabitacion());
             tvPrecioAd.setText("$ "+habitacion.getTipoHabitacion().getPrecio());
         }

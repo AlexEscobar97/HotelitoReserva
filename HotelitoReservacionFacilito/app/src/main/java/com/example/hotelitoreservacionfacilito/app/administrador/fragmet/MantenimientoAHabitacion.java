@@ -30,6 +30,9 @@ public class MantenimientoAHabitacion extends Fragment {
     Spinner spinnerEstado,spinnerTipoHabitacion;
     Button btnAgregarhabitacion;
 
+    //Lista para usar en los componentes de Android
+    ArrayList<String> lista1;
+
     ListaTipoHabitacion listaTipoHabitacion = new ListaTipoHabitacion();
 
     List<TipoHabitacion> listahabitacion = new ArrayList<>();
@@ -99,11 +102,11 @@ public class MantenimientoAHabitacion extends Fragment {
         protected List<TipoHabitacion> doInBackground(String... strings) {
             listahabitacion = new ArrayList<>();
             List listaMuestra;
+
             try {
                 TipoHabitacionService tipoHabitacionService = new TipoHabitacionService();
                 listahabitacion = tipoHabitacionService.obtenerTipoHabitacions();
-                System.out.println("Objeto: "+listahabitacion.toString());
-                System.out.println("Objeto22: "+listahabitacion.indexOf(3));
+                System.out.println("Muestra Lista: "+listahabitacion.toString());
             }catch (Exception e){
                 System.out.println("Error al traer la lista de TipoHabitaciones: " +e.getMessage());
             }
@@ -118,7 +121,7 @@ public class MantenimientoAHabitacion extends Fragment {
                     //String[] listaH = tipoHabitacion;
                     listHabitacionSpinner.add("Tipo de Habitacion");
                     for(TipoHabitacion tipo: tipoHabitacion){
-                        listHabitacionSpinner.add(tipo.getTitulo());
+                        listHabitacionSpinner.add(tipo.getTitulo() +" $ :" +tipo.getPrecio());
                     }
                     ArrayAdapter <Habitacion> lista = new ArrayAdapter
                             (getContext(), android.R.layout.simple_spinner_item,listHabitacionSpinner);

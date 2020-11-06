@@ -13,8 +13,10 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.example.hotelitoreservacionfacilito.R;
+import com.example.hotelitoreservacionfacilito.models.Habitacion;
 import com.example.hotelitoreservacionfacilito.models.TipoHabitacion;
 import com.example.hotelitoreservacionfacilito.service.TipoHabitacionService;
 
@@ -29,6 +31,11 @@ public class MantenimientoAHabitacion extends Fragment {
     Button btnAgregarhabitacion;
 
     ListaTipoHabitacion listaTipoHabitacion = new ListaTipoHabitacion();
+
+    List<TipoHabitacion> listahabitacion = new ArrayList<>();
+    List<String> listHabitacionSpinner = new ArrayList<>();
+
+    int idTipoHabitacion;
 
     public MantenimientoAHabitacion() {
         // Required empty public constructor
@@ -55,6 +62,25 @@ public class MantenimientoAHabitacion extends Fragment {
             }
         });
 
+        spinnerTipoHabitacion.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if(position != 0){
+                    idTipoHabitacion = listahabitacion.get(position - 1).getIdTipoHabitacion();
+                    Toast.makeText(getContext(), "Usted eligio la "
+                            +listahabitacion.get(position - 1).getTitulo()
+                            +" con el ID: " +listahabitacion.get(position - 1).getIdTipoHabitacion() , Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(getContext(), "Seleccione un Tipo de Habitacion", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
         return view;
     }
     public void reinicarAsysnc(){
@@ -71,7 +97,7 @@ public class MantenimientoAHabitacion extends Fragment {
 
         @Override
         protected List<TipoHabitacion> doInBackground(String... strings) {
-            List<TipoHabitacion> listahabitacion = new ArrayList<>();
+            listahabitacion = new ArrayList<>();
             List listaMuestra;
             try {
                 TipoHabitacionService tipoHabitacionService = new TipoHabitacionService();
@@ -90,8 +116,12 @@ public class MantenimientoAHabitacion extends Fragment {
             try {
                 if (!(tipoHabitacion ==null)){
                     //String[] listaH = tipoHabitacion;
-                    ArrayAdapter <CharSequence> lista = new ArrayAdapter
-                            (getContext(), android.R.layout.simple_spinner_item,tipoHabitacion);
+                    listHabitacionSpinner.add("Tipo de Habitacion");
+                    for(TipoHabitacion tipo: tipoHabitacion){
+                        listHabitacionSpinner.add(tipo.getTitulo());
+                    }
+                    ArrayAdapter <Habitacion> lista = new ArrayAdapter
+                            (getContext(), android.R.layout.simple_spinner_item,listHabitacionSpinner);
                     spinnerTipoHabitacion.setAdapter(lista);
                 }
                 reinicarAsysnc();

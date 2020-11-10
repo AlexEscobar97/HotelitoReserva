@@ -7,17 +7,39 @@
     tools:context=".app.administrador.fragmet.PromocionesAdmin">
 
     <TextView
-        android:id="@+id/text_slideshow"
-        android:layout_width="match_parent"
+        android:id="@+id/tvTituloPromociones"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        android:text="Lista de Promociones"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="28dp"
+        android:text="PROMOCIONES"
+        android:textSize="25dp"
+        android:textColor="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.321"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+    <Button
+        android:id="@+id/btnAgregarPromociones"
+        android:layout_width="56dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="20dp"
+        android:background="@drawable/botonagregar"
+        android:text="+"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
+        app:layout_constraintStart_toEndOf="@+id/tvTituloPromociones"
+        app:layout_constraintTop_toTopOf="@+id/tvTituloPromociones" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvpromocion"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="75dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTituloPromociones" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

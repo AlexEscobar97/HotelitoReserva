@@ -5,7 +5,7 @@ import java.util.Date;
 public class Promocion{
 
     private int idPromocion;
-
+    private String nombrePromocion;
     private double descuento;
     private Date fechaIinicioProm;
     private Date fechaFinProm;
@@ -16,6 +16,14 @@ public class Promocion{
 
     public void setIdPromocion(int idPromocion) {
         this.idPromocion = idPromocion;
+    }
+
+    public String getNombrePromocion() {
+        return nombrePromocion;
+    }
+
+    public void setNombrePromocion(String nombrePromocion) {
+        this.nombrePromocion = nombrePromocion;
     }
 
     public double getDescuento() {
@@ -44,7 +52,7 @@ public class Promocion{
 
     @Override
     public String toString() {
-        return "Promocion{" + "idPromocion=" + idPromocion + ", descuento=" + descuento + ", fechaIinicioProm=" + fechaIinicioProm + ", fechaFinProm=" + fechaFinProm + '}';
+        return "Promocion{" + "idPromocion=" + idPromocion + ", nombrePromocion=" + nombrePromocion +", descuento=" + descuento + ", fechaIinicioProm=" + fechaIinicioProm + ", fechaFinProm=" + fechaFinProm + '}';
     }
     
 }

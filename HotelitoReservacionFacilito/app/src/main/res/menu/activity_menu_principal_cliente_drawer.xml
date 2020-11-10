@@ -7,7 +7,7 @@
         <item
             android:id="@+id/nav_habitacionesclientes"
             android:icon="@drawable/cuarto"
-            android:title="Habitaciones" />
+            android:title="HABITACIONES" />
         <item
             android:id="@+id/nav_promocionesclientes"
             android:icon="@drawable/mejorprecio"

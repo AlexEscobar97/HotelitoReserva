@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        >
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/crvhabitacioncliente"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:animateLayoutChanges="true"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="0.5dp"
+            app:cardUseCompatPadding="true"
+            android:clickable="true"
+            app:cardPreventCornerOverlap="true"
+            android:focusable="true"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="155dp"
+                android:layout_height="match_parent"
+                android:animateLayoutChanges="true"
+                android:padding="5dp"
+                android:background="#eeeeee"
+                >
+
+                <ImageView
+                    android:id="@+id/imgprincipalcliente"
+                    android:layout_width="130dp"
+                    android:layout_height="115dp"
+                    android:layout_marginTop="8dp"
+                    android:background="#fff"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/pruebahabitacion"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.48"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <ImageView
+                    android:id="@+id/imgFav_right"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:background="#fafafa"
+                    android:padding="5dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/iconocompartir" />
+
+                <ImageView
+                    android:id="@+id/imgShare_right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imgprincipalcliente"
+                    app:srcCompat="@drawable/iconomegusta" />
+
+                <TextView
+                    android:id="@+id/tvPrecioCliente"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:background="#fff"
+                    android:text="$7.80"
+                    android:textColor="#000000"
+                    app:layout_constraintBottom_toTopOf="@+id/imgShare_right"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/tvtitulonombrehabitacion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="4dp"
+                    android:text="Habitacion 1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imgprincipalcliente" />
+
+                <TextView
+                    android:id="@+id/tvdisponiblecliente"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Disponible"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvtitulonombrehabitacion" />
+
+                <TextView
+                    android:id="@+id/tvcategoriacliente"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:text="Categoria A"
+                    android:textSize="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imgShare_right" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

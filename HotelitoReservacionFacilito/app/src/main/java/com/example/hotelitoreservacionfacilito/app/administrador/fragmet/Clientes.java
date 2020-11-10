@@ -1,5 +1,7 @@
 package com.example.hotelitoreservacionfacilito.app.administrador.fragmet;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -27,11 +29,7 @@ import com.google.android.material.navigation.NavigationView;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link Clientes#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class Clientes extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
@@ -47,7 +45,7 @@ public class Clientes extends Fragment {
 
     ClientesTask clientesTask = new ClientesTask();
 
-
+    Activity activity;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -159,5 +157,6 @@ public class Clientes extends Fragment {
             }
         }
     }
+
 
 }

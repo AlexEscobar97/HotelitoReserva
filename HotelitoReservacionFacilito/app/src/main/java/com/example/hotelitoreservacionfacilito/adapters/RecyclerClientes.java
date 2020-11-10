@@ -28,6 +28,8 @@ public class RecyclerClientes extends RecyclerView.Adapter<RecyclerClientes.View
     private Fragment context;
     private FragmentManager fragmentManager;
 
+    private FragmentTransaction  fragmentTransaction;
+
     public RecyclerClientes(List<Cliente> lista, Fragment context) {
         this.lista = lista;
         this.context = context;
@@ -79,6 +81,12 @@ public class RecyclerClientes extends RecyclerView.Adapter<RecyclerClientes.View
                     MantenimientoCliente mantenimientoCliente = new MantenimientoCliente();
                     mantenimientoCliente.setArguments(datosEnviar);
 
+                    fragmentManager = context.getActivity().getSupportFragmentManager();
+                    fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.replace(R.id.contenedor, mantenimientoCliente);
+                    fragmentTransaction.addToBackStack(null);
+                    fragmentTransaction.commit();
+
                     /*FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                     fragmentTransaction.replace(R.id.nav_view, mantenimientoCliente);
                     //fragmentTransaction.addToBackStack(null);
@@ -86,11 +94,11 @@ public class RecyclerClientes extends RecyclerView.Adapter<RecyclerClientes.View
                     fragmentTransaction.commit();*/
 
 
-                    fragmentManager
-                            .beginTransaction()
-                            .replace(R.id.contenedor, mantenimientoCliente)
-                            .addToBackStack(null)
-                            .commit();
+                   // fragmentManager
+                    //.beginTransaction()
+                     //       .replace(R.id.contenedor, mantenimientoCliente)
+                    //       .addToBackStack(null)
+                     //       .commit();
                             //.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
                             //.commit();
 

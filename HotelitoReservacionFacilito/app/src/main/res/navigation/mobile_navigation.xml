@@ -55,7 +55,11 @@
         android:id="@+id/nav_promociones"
         android:name="com.example.hotelitoreservacionfacilito.app.administrador.fragmet.PromocionesAdmin"
         android:label="@string/menu_promociones"
-        tools:layout="@layout/fragment_promociones_admin" />
+        tools:layout="@layout/fragment_promociones_admin" >
+        <action
+            android:id="@+id/action_nav_promociones_to_mantenimientoAPromocion"
+            app:destination="@id/mantenimientoAPromocion" />
+    </fragment>
     <fragment
         android:id="@+id/fragment_clientes"
         android:name="com.example.hotelitoreservacionfacilito.app.administrador.fragmet.Clientes"
@@ -80,4 +84,9 @@
         android:name="com.example.hotelitoreservacionfacilito.app.administrador.fragmet.MantenimientoAHabitacion"
         android:label="Agregar Habitacion"
         tools:layout="@layout/fragment_mantenimiento_a_habitacion" />
+    <fragment
+        android:id="@+id/mantenimientoAPromocion"
+        android:name="com.example.hotelitoreservacionfacilito.app.administrador.fragmet.MantenimientoAPromocion"
+        android:label="Agregar Promocion"
+        tools:layout="@layout/fragment_mantenimiento_a_promocion" />
 </navigation>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".app.administrador.fragmet.MantenimientoAPromocion">
+
+
+    <TextView
+        android:id="@+id/tvTituloPromociones"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:shadowColor="#000000"
+        android:text="Agregar Promocion"
+        android:textColor="@color/colorPrimary"
+        android:textSize="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="266dp"
+        android:layout_height="296dp"
+        android:layout_marginTop="25dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTituloPromociones">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtNombrePromocion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nombre Promocion" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtdescuentoPromocion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Descuento" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtFechaIPromocion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Fecha Inicio :" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtFechaFPromocion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Fecha Final :" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnAgregarPromocion"
+        android:layout_width="183dp"
+        android:layout_height="48dp"
+        android:background="@drawable/botonagregar"
+        android:text="Agregar"
+        android:textColor="#fff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintVertical_bias="0.172" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -18,6 +18,7 @@ import com.example.hotelitoreservacionfacilito.adapters.RecyclerPromocion;
 import com.example.hotelitoreservacionfacilito.models.Promocion;
 import com.example.hotelitoreservacionfacilito.models.PromocionHabitacion;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 public class RecyclerPromocionCliente extends RecyclerView.Adapter<RecyclerPromocionCliente.ViewHolder> {
@@ -25,6 +26,7 @@ public class RecyclerPromocionCliente extends RecyclerView.Adapter<RecyclerPromo
     private List<PromocionHabitacion> lista;
     private Fragment context;
     private FragmentManager fragmentManager;
+    private SimpleDateFormat ffecha = new SimpleDateFormat("dd-MM-yyyy");
 
     public RecyclerPromocionCliente(List<PromocionHabitacion> lista, Fragment context) {
         this.lista = lista;
@@ -66,11 +68,16 @@ public class RecyclerPromocionCliente extends RecyclerView.Adapter<RecyclerPromo
         }
 
         public void asignarDatos(final PromocionHabitacion promocionHabitacion){
-            promo_img.setImageResource(R.drawable.habitacioneslogolista);
-            tvestadopromocion.setText(promocionHabitacion.getIdHabitacion().getEstadoHabitacion());
-            tvdescuentocliente.setText(""+promocionHabitacion.getIdPromocion().getDescuento());
-            tvfechainiciopromocion.setText(""+promocionHabitacion.getIdPromocion().getFechaIinicioProm());
-            tvfechafinalpromocion.setText(""+promocionHabitacion.getIdPromocion().getFechaFinProm());
+            try {
+                promo_img.setImageResource(R.drawable.habitacioneslogolista);
+                tvestadopromocion.setText(""+promocionHabitacion.getHabitacion().getEstadoHabitacion());
+                tvdescuentocliente.setText(ffecha.format(promocionHabitacion.getPromocion().getDescuento()));
+                tvfechainiciopromocion.setText(ffecha.format(promocionHabitacion.getPromocion().getFechaIinicioProm()));
+                tvfechafinalpromocion.setText(ffecha.format(promocionHabitacion.getPromocion().getFechaFinProm()));
+            }catch (Exception e){
+                System.out.println("Error al imprimir promociones: " +e.getMessage());
+            }
+
         }
     }
 

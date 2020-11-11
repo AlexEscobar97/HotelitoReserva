@@ -45,8 +45,10 @@ public abstract class RestTemplateEntity<Entity> {
              */
             ResponseEntity<Entity[]> response = restTemplate.getForEntity(url, classEntityArray);
             list = Arrays.asList(response.getBody());
+            System.out.println("Esta es la URL de consulta: " +url);
         } catch (Exception e) {
             System.out.println("error absRest getListURL: " + e);
+            System.out.println("\nEsta es la URL de Eror: " +url);
         }
         return list;
     }

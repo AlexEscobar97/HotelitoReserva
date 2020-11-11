@@ -3,18 +3,18 @@ package com.example.hotelitoreservacionfacilito.models;
 public class PromocionHabitacion{
 
 	private int idPromHab;
-    private Habitacion idHabitacion;
-    private Promocion idPromocion;
+    private Habitacion habitacion;
+    private Promocion promocion;
 
 	public PromocionHabitacion() {
 		super();
 	}
 
-	public PromocionHabitacion(int idPromHab, Habitacion idHabitacion, Promocion idPromocion) {
+	public PromocionHabitacion(int idPromHab, Habitacion habitacion, Promocion promocion) {
 		super();
 		this.idPromHab = idPromHab;
-		this.idHabitacion = idHabitacion;
-		this.idPromocion = idPromocion;
+		this.habitacion = habitacion;
+		this.promocion = promocion;
 	}
 
 	public int getIdPromHab() {
@@ -25,26 +25,26 @@ public class PromocionHabitacion{
 		this.idPromHab = idPromHab;
 	}
 
-	public Habitacion getIdHabitacion() {
-		return idHabitacion;
+	public Habitacion getHabitacion() {
+		return habitacion;
 	}
 
-	public void setIdHabitacion(Habitacion idHabitacion) {
-		this.idHabitacion = idHabitacion;
+	public void setHabitacion(Habitacion habitacion) {
+		this.habitacion = habitacion;
 	}
 
-	public Promocion getIdPromocion() {
-		return idPromocion;
+	public Promocion getPromocion() {
+		return promocion;
 	}
 
-	public void setIdPromocion(Promocion idPromocion) {
-		this.idPromocion = idPromocion;
+	public void setPromocion(Promocion promocion) {
+		this.promocion = promocion;
 	}
 
 	@Override
 	public String toString() {
-		return "PromocionHabitacion [idPromHab=" + idPromHab + ", idHabitacion=" + idHabitacion + ", idPromocion="
-				+ idPromocion + "]";
+		return "PromocionHabitacion [idPromHab=" + idPromHab + ", habitacion=" + habitacion + ", promocion="
+				+ promocion + "]";
 	}
 	
 }

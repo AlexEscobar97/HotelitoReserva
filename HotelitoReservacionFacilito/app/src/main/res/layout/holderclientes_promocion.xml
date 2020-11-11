@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        >
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btncardviewpromocioncliente"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:animateLayoutChanges="true"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="0.5dp"
+            app:cardPreventCornerOverlap="true"
+            app:cardUseCompatPadding="true">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:animateLayoutChanges="true"
+                android:background="#eeeeee"
+                android:padding="5dp">
+
+                <ImageView
+                    android:id="@+id/promo_img"
+                    android:layout_width="155dp"
+                    android:layout_height="115dp"
+                    android:layout_marginTop="10dp"
+                    android:padding="10dp"
+                    android:background="#fff"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/habitacioneslogolista"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvnombrePH"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginBottom="96dp"
+                    android:background="#fff"
+                    android:text="Habitacion 1"
+                    android:textColor="#000000"
+                    app:layout_constraintBottom_toTopOf="@+id/imgShare_right"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/tvestadopromocion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="8dp"
+                    android:text="Disponible"
+                    android:textColor="#000000"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/promo_img"
+                    app:srcCompat="@drawable/iconomegusta" />
+
+                <TextView
+                    android:id="@+id/tvfechainiciopromocion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Fecha Inicio:19-11-2020"
+                    android:textSize="12dp"
+                    android:textColor="#1b5e20"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvestadopromocion"
+                    app:srcCompat="@drawable/iconomegusta" />
+
+                <TextView
+                    android:id="@+id/tvfechafinalpromocion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Fecha Inicio:30-11-2020"
+                    android:textSize="12dp"
+                    android:textColor="#b71c1c"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvfechainiciopromocion"
+                    app:srcCompat="@drawable/iconomegusta" />
+
+                <TextView
+                    android:id="@+id/tvdescuentocliente"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:drawableLeft="@drawable/ic_descuentocliente"
+                    android:text="9.30"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/promo_img" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

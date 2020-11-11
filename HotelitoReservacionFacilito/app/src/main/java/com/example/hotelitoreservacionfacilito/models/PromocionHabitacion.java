@@ -5,7 +5,7 @@ public class PromocionHabitacion{
 	private int idPromHab;
     private Habitacion idHabitacion;
     private Promocion idPromocion;
-    
+
 	public PromocionHabitacion() {
 		super();
 	}

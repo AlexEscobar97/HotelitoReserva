@@ -3,6 +3,7 @@ package com.example.hotelitoreservacionfacilito.adapters;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,6 +15,7 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.hotelitoreservacionfacilito.R;
+import com.example.hotelitoreservacionfacilito.app.administrador.fragmet.MantenomientoAEmpleado;
 import com.example.hotelitoreservacionfacilito.models.UsuarioEmpleado;
 
 import java.util.List;
@@ -23,6 +25,8 @@ public class RecyclerEmpleados extends RecyclerView.Adapter<RecyclerEmpleados.Vi
     private List<UsuarioEmpleado> lista;
     private Fragment context;
     private FragmentManager fragmentManager;
+
+    private FragmentTransaction  fragmentTransaction;
 
     public RecyclerEmpleados(List<UsuarioEmpleado> lista,Fragment context){
         this.lista = lista;
@@ -52,6 +56,7 @@ public class RecyclerEmpleados extends RecyclerView.Adapter<RecyclerEmpleados.Vi
         CardView cardView;
         ImageView iVFoto;
         TextView tvNombreEmpleado, tvTelefono;
+        Button btnActualizarE,btnEliminarE;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -59,6 +64,7 @@ public class RecyclerEmpleados extends RecyclerView.Adapter<RecyclerEmpleados.Vi
             iVFoto = itemView.findViewById(R.id.iVFotoEmpleado);
             tvNombreEmpleado = itemView.findViewById(R.id.tvNombreEmpleado);
             tvTelefono = itemView.findViewById(R.id.tvTelefonoEmpleado);
+            btnActualizarE = itemView.findViewById(R.id.btnActualizarE);
         }
 
         public void asignarDatos(final UsuarioEmpleado usuarioEmpleado){
@@ -68,6 +74,20 @@ public class RecyclerEmpleados extends RecyclerView.Adapter<RecyclerEmpleados.Vi
             System.out.println(nombre);
             tvNombreEmpleado.setText(usuarioEmpleado.getPersonal().getNombre()+" "+usuarioEmpleado.getPersonal().getApellido());
             tvTelefono.setText(usuarioEmpleado.getUsuario());
+
+            btnActualizarE.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    MantenomientoAEmpleado mantenomientoAEmpleado = new MantenomientoAEmpleado();
+                    fragmentManager = context.getActivity().getSupportFragmentManager();
+                    fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.replace(R.id.FragmentEmpleadoAdmin, mantenomientoAEmpleado);
+                    fragmentTransaction.addToBackStack(null);
+                    fragmentTransaction.commit();
+
+                }
+            });
         }
 
     }

@@ -28,7 +28,8 @@ public class HabitacionesCliente extends Fragment {
     TextView tvlistahabitaciones;
     ImageButton imghabitacioncliente;
     RecyclerView rvhabitacioncliente;
-
+    RecycleHabitacionClientes adapter;
+    View viewGlobal;
     HabitacionesClientesTask habitacionesClientesTask = new HabitacionesClientesTask();
 
     @Override
@@ -36,13 +37,13 @@ public class HabitacionesCliente extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         //return inflater.inflate(R.layout.fragment_habitaciones_cliente, container, false);
-        final View view = inflater.inflate(R.layout.fragment_habitaciones_cliente, container, false);
-        tvlistahabitaciones = view.findViewById(R.id.tvlistahabitaciones);
+        viewGlobal = inflater.inflate(R.layout.fragment_habitaciones_cliente, container, false);
+        tvlistahabitaciones = viewGlobal.findViewById(R.id.tvlistahabitaciones);
         //imghabitacioncliente = view.findViewById(R.id.imghabitacioncliente);
-        rvhabitacioncliente = view.findViewById(R.id.rvhabitacioncliente);
+        rvhabitacioncliente = viewGlobal.findViewById(R.id.rvhabitacioncliente);
 
         habitacionesClientesTask.execute();
-        return view;
+        return viewGlobal;
     }
 
     public void reiniciarAsysnc(){
@@ -74,10 +75,11 @@ public class HabitacionesCliente extends Fragment {
             super.onPostExecute(habitacions);
             try {
                 if(!habitacions.isEmpty()){
-                    RecycleHabitacionClientes adapter = new RecycleHabitacionClientes(habitacions, getParentFragment());
+                    adapter = new RecycleHabitacionClientes(habitacions,viewGlobal.getContext(), getActivity());
                     //rvhabitacion.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false));
-                    rvhabitacioncliente.setLayoutManager(new GridLayoutManager(getContext(), 2));
+                    rvhabitacioncliente.setLayoutManager(new GridLayoutManager(getActivity(), 2));
                     rvhabitacioncliente.setAdapter(adapter);
+
                 }
                 reiniciarAsysnc();
             }catch (Exception e){

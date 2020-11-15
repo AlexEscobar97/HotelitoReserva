@@ -17,6 +17,7 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.hotelitoreservacionfacilito.R;
+import com.example.hotelitoreservacionfacilito.app.administrador.fragmet.Clientes;
 import com.example.hotelitoreservacionfacilito.app.administrador.fragmet.MantenimientoCliente;
 import com.example.hotelitoreservacionfacilito.models.Cliente;
 
@@ -81,12 +82,6 @@ public class RecyclerClientes extends RecyclerView.Adapter<RecyclerClientes.View
                     MantenimientoCliente mantenimientoCliente = new MantenimientoCliente();
                     mantenimientoCliente.setArguments(datosEnviar);
 
-                    fragmentManager = context.getActivity().getSupportFragmentManager();
-                    fragmentTransaction = fragmentManager.beginTransaction();
-                    fragmentTransaction.replace(R.id.contenedor, mantenimientoCliente);
-                    fragmentTransaction.addToBackStack(null);
-                    fragmentTransaction.commit();
-
                     /*FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                     fragmentTransaction.replace(R.id.nav_view, mantenimientoCliente);
                     //fragmentTransaction.addToBackStack(null);
@@ -94,11 +89,11 @@ public class RecyclerClientes extends RecyclerView.Adapter<RecyclerClientes.View
                     fragmentTransaction.commit();*/
 
 
-                   // fragmentManager
-                    //.beginTransaction()
-                     //       .replace(R.id.contenedor, mantenimientoCliente)
-                    //       .addToBackStack(null)
-                     //       .commit();
+                   context.getActivity().getSupportFragmentManager()
+                    .beginTransaction()
+                           .replace(R.id.nav_host_fragment, new MantenimientoCliente())
+                           .commit();
+
                             //.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
                             //.commit();
 

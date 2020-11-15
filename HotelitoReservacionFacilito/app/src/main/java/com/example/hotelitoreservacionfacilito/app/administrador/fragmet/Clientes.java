@@ -43,7 +43,7 @@ public class Clientes extends Fragment {
     Button btnAgregarCliente;
     RecyclerView rvClientes;
 
-    ClientesTask clientesTask = new ClientesTask();
+
 
     Activity activity;
 
@@ -93,7 +93,7 @@ public class Clientes extends Fragment {
         tvTitulo = view.findViewById(R.id.tvTitulo);
         btnAgregarCliente = view.findViewById(R.id.btnAgregarCliente);
         rvClientes = view.findViewById(R.id.rvClientes);
-
+        ClientesTask clientesTask = new ClientesTask();
         clientesTask.execute();
 
         //final NavController navController = Navigation.findNavController(view.findViewById(R.id.nav_host_fragment));
@@ -116,11 +116,6 @@ public class Clientes extends Fragment {
             }
         });
 
-    }
-
-    public void reinicarAsysnc(){
-        clientesTask.cancel(true);
-        clientesTask = new ClientesTask();
     }
 
     public class ClientesTask extends AsyncTask<String, String, List<Cliente>> {
@@ -151,7 +146,6 @@ public class Clientes extends Fragment {
                     rvClientes.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false));
                     rvClientes.setAdapter(adapter);
                 }
-                reinicarAsysnc();
             }catch (Throwable throwable){
                 System.out.println("Error al imprimir la lista de clientes: " +throwable.getMessage());
             }

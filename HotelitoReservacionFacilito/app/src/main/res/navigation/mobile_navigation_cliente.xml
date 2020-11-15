@@ -9,10 +9,24 @@
         android:id="@+id/nav_habitacionesclientes"
         android:name="com.example.hotelitoreservacionfacilito.app.cliente.fragmet.HabitacionesCliente"
         android:label="Habitaciones"
-        tools:layout="@layout/fragment_habitaciones_cliente" />
+        tools:layout="@layout/fragment_habitaciones_cliente" >
+        <action
+            android:id="@+id/action_nav_habitacionesclientes_to_insertarReservaHabitacionCliente"
+            app:destination="@id/insertarReservaHabitacionCliente" />
+    </fragment>
     <fragment
         android:id="@+id/nav_promocionesclientes"
         android:name="com.example.hotelitoreservacionfacilito.app.cliente.fragmet.PromocionesClientes"
         android:label="Promociones"
         tools:layout="@layout/fragment_promociones_clientes" />
+    <fragment
+        android:id="@+id/catalogomenuCliente"
+        android:name="com.example.hotelitoreservacionfacilito.app.cliente.fragmet.CatalogomenuCliente"
+        android:label="Catalogo de Menu"
+        tools:layout="@layout/fragment_catalogomenu_cliente" />
+    <fragment
+        android:id="@+id/insertarReservaHabitacionCliente"
+        android:name="com.example.hotelitoreservacionfacilito.app.cliente.fragmet.InsertarReservaHabitacionCliente"
+        android:label="Reserva"
+        tools:layout="@layout/fragment_insertar_reserva_habitacion_cliente" />
 </navigation>

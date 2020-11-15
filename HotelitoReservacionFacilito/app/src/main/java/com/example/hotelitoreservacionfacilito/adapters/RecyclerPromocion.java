@@ -25,6 +25,7 @@ public class RecyclerPromocion extends RecyclerView.Adapter<RecyclerPromocion.Vi
     private List<Promocion> lista;
     private Fragment context;
     private FragmentManager fragmentManager;
+    private SimpleDateFormat ffecha = new SimpleDateFormat("dd-MM-yyyy");
 
     public RecyclerPromocion(List<Promocion> lista, Fragment context) {
         this.lista = lista;
@@ -66,13 +67,10 @@ public class RecyclerPromocion extends RecyclerView.Adapter<RecyclerPromocion.Vi
         }
 
         public void asignarDatos(final Promocion promocion){
-            //Date FI,FF;
-            SimpleDateFormat fechaInicio = new SimpleDateFormat("YYYY-MM-dd");
-            //FI = fechaInicio;
 
             promo_img.setImageResource(R.drawable.habitacioneslogolista);
-            tvfechafinal.setText("Fecha final:"+promocion.getFechaFinProm());
-            tvfechainicio.setText("Fecha Inicio:"+promocion.getFechaIinicioProm());
+            tvfechafinal.setText("Fecha final:"+ffecha.format(promocion.getFechaFinProm()));
+            tvfechainicio.setText("Fecha Inicio:"+ffecha.format(promocion.getFechaIinicioProm()));
         }
     }
 

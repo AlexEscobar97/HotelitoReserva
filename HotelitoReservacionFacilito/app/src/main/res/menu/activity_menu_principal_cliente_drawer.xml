@@ -13,8 +13,8 @@
             android:icon="@drawable/mejorprecio"
             android:title="PROMOCIONES" />
         <item
-            android:id="@+id/nav_menu"
-            android:icon="@drawable/contra"
+            android:id="@+id/catalogomenuCliente"
+            android:icon="@drawable/cartadevino"
             android:title="MENU" />
     </group>
 </menu>

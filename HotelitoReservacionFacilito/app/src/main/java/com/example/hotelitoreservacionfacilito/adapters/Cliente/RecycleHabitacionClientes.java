@@ -1,5 +1,7 @@
 package com.example.hotelitoreservacionfacilito.adapters.Cliente;
 
+import android.app.Activity;
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,11 +11,16 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.hotelitoreservacionfacilito.R;
+import com.example.hotelitoreservacionfacilito.app.administrador.fragmet.MantenimientoCliente;
+import com.example.hotelitoreservacionfacilito.app.cliente.fragmet.InsertarReservaHabitacionCliente;
 import com.example.hotelitoreservacionfacilito.models.Habitacion;
 
 import java.util.List;
@@ -21,13 +28,13 @@ import java.util.List;
 public class RecycleHabitacionClientes extends RecyclerView.Adapter<RecycleHabitacionClientes.ViewHolder> {
 
     private List<Habitacion> lista;
-    private Fragment context;
-    private FragmentManager fragmentManager;
+    private Context context;
+    FragmentActivity fragmentActivity;
 
-    public RecycleHabitacionClientes(List<Habitacion> lista, Fragment context) {
+    public RecycleHabitacionClientes(List<Habitacion> lista,Context context,FragmentActivity fragmentActivity) {
         this.lista = lista;
         this.context = context;
-        this.fragmentManager = context.getActivity().getSupportFragmentManager();
+        this.fragmentActivity =fragmentActivity;
     }
 
     @NonNull
@@ -53,6 +60,8 @@ public class RecycleHabitacionClientes extends RecyclerView.Adapter<RecycleHabit
         ImageView imgprincipalcliente,imgFav_right,imgShare_right;
         TextView tvPrecioCliente,tvtitulonombrehabitacion,tvdisponiblecliente,tvcategoriacliente;
 
+        NavController navController = Navigation.findNavController((Activity) context, R.id.nav_host_fragment);
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
@@ -72,12 +81,19 @@ public class RecycleHabitacionClientes extends RecyclerView.Adapter<RecycleHabit
             tvPrecioCliente.setText("$ "+habitacion.getTipoHabitacion().getPrecio());
             tvdisponiblecliente.setText(""+habitacion.getEstadoHabitacion());
             tvcategoriacliente.setText(habitacion.getTipoHabitacion().getTitulo());
+            crvhabitacioncliente.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                   // MantenimientoCliente mantenimientoCliente = new MantenimientoCliente();
+                    //showFragment(fragmentActivity, new InsertarReservaHabitacionCliente());
+                    navController.navigate(R.id.insertarReservaHabitacionCliente);
+                }
+            });
         }
     }
 
-    private void showFragment(Fragment fragment) {
-        fragmentManager
-                .beginTransaction().replace(R.id.nav_host_fragment, fragment)
+    private void showFragment(FragmentActivity activity, Fragment fragment) {
+        activity.getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, fragment)
                 .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
                 .commit();
     }

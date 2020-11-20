@@ -89,4 +89,13 @@
         android:name="com.example.hotelitoreservacionfacilito.app.administrador.fragmet.MantenimientoAPromocion"
         android:label="Agregar Promocion"
         tools:layout="@layout/fragment_mantenimiento_a_promocion" />
+    <fragment
+        android:id="@+id/listareservasAdministrador"
+        android:name="com.example.hotelitoreservacionfacilito.app.administrador.fragmet.ListareservasAdministrador"
+        android:label="Lista de Reservaciones"
+        tools:layout="@layout/fragment_listareservas_administrador" >
+        <action
+            android:id="@+id/action_listareservasAdministrador_to_nav_empleados"
+            app:destination="@id/nav_empleados" />
+    </fragment>
 </navigation>

@@ -46,7 +46,7 @@ public class MenuPrincipalAdministrador extends AppCompatActivity {
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_empleados, R.id.nav_habitaciones, R.id.nav_promociones,
-                R.id.fragment_clientes)
+                R.id.fragment_clientes, R.id.listareservasAdministrador)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);

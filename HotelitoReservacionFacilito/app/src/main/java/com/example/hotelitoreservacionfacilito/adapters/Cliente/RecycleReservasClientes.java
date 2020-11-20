@@ -34,7 +34,7 @@ public class RecycleReservasClientes extends RecyclerView.Adapter<RecycleReserva
     @NonNull
     @Override
     public RecycleReservasClientes.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.holderclientes_promocion, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.holdercliente_misreservas, parent, false);
         return new RecycleReservasClientes.ViewHolder(v);
     }
 

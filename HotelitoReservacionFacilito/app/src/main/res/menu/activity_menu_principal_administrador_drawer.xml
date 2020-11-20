@@ -20,5 +20,9 @@
             android:id="@+id/fragment_clientes"
             android:icon="@drawable/empleado"
             android:title="Clientes" />
+        <item
+            android:id="@+id/listareservasAdministrador"
+            android:icon="@drawable/tipohabitacion"
+            android:title="Reservas" />
     </group>
 </menu>

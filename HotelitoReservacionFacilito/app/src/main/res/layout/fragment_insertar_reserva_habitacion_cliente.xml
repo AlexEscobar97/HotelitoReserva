@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:focusable="false"
     tools:context=".app.cliente.fragmet.InsertarReservaHabitacionCliente">
 
 
@@ -37,6 +38,7 @@
         app:startIconDrawable="@drawable/cajatextouser">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtIdCliente"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Nombre"
@@ -50,7 +52,6 @@
         android:layout_height="59dp"
         android:layout_marginTop="12dp"
         android:background="@drawable/cajatextologin"
-        android:focusable="false"
         android:paddingLeft="15dp"
         android:paddingRight="20dp"
         android:textColorHint="#4B0082"
@@ -61,8 +62,10 @@
         app:startIconDrawable="@drawable/fecha">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtFechaInicio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:focusable="false"
             android:hint="Fecha Inicio"
             android:inputType="text"
             android:textSize="15sp" />
@@ -76,19 +79,20 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/cajatextologin"
-        android:focusable="false"
         android:paddingLeft="15dp"
         android:paddingRight="20dp"
         android:textColorHint="#4B0082"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintHorizontal_bias="0.632"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/r_fechainicio"
         app:startIconDrawable="@drawable/fecha">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtFechaFinal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:focusable="false"
             android:hint="Fecha Final"
             android:inputType="text"
             android:textSize="15sp" />
@@ -112,31 +116,7 @@
         app:startIconDrawable="@drawable/habitacion">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/Password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="text"
-            android:textSize="15sp" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/r_estadoreserva"
-        android:layout_width="251dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:background="@drawable/cajatextologin"
-        android:focusable="false"
-        android:hint="Estado Reserva"
-        android:paddingLeft="15dp"
-        android:paddingRight="20dp"
-        android:textColorHint="#4B0082"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/r_habitacioncliente">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/estadoreserva"
+            android:id="@+id/edtIdHabitacion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="text"
@@ -144,10 +124,10 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/crear_cuenta"
+        android:id="@+id/crear_reserva"
         android:layout_width="157dp"
         android:layout_height="46dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/loginbotones"
         android:elevation="5dp"
         android:text="Reservar"
@@ -155,6 +135,6 @@
         android:textSize="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/r_estadoreserva" />
+        app:layout_constraintTop_toBottomOf="@+id/r_habitacioncliente" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

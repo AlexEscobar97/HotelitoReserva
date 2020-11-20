@@ -18,6 +18,7 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.hotelitoreservacionfacilito.Logued;
 import com.example.hotelitoreservacionfacilito.R;
 import com.example.hotelitoreservacionfacilito.app.administrador.fragmet.MantenimientoCliente;
 import com.example.hotelitoreservacionfacilito.app.cliente.fragmet.InsertarReservaHabitacionCliente;
@@ -87,6 +88,7 @@ public class RecycleHabitacionClientes extends RecyclerView.Adapter<RecycleHabit
                    // MantenimientoCliente mantenimientoCliente = new MantenimientoCliente();
                     //showFragment(fragmentActivity, new InsertarReservaHabitacionCliente());
                     navController.navigate(R.id.insertarReservaHabitacionCliente);
+                    Logued.habitacionLogued = habitacion;
                 }
             });
         }

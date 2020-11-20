@@ -86,5 +86,6 @@ public class HabitacionesCliente extends Fragment {
                 System.out.println("Error al imprimir la lista de Habitaciones: " +e.getMessage());
             }
         }
+
     }
 }

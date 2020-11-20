@@ -13,20 +13,64 @@
         <action
             android:id="@+id/action_nav_habitacionesclientes_to_insertarReservaHabitacionCliente"
             app:destination="@id/insertarReservaHabitacionCliente" />
+        <action
+            android:id="@+id/action_nav_habitacionesclientes_to_catalogomenuCliente"
+            app:destination="@id/catalogomenuCliente" />
+        <action
+            android:id="@+id/action_nav_habitacionesclientes_to_nav_promocionesclientes"
+            app:destination="@id/nav_promocionesclientes" />
+        <action
+            android:id="@+id/action_nav_habitacionesclientes_to_misreservasClientes"
+            app:destination="@id/misreservasClientes" />
     </fragment>
     <fragment
         android:id="@+id/nav_promocionesclientes"
         android:name="com.example.hotelitoreservacionfacilito.app.cliente.fragmet.PromocionesClientes"
         android:label="Promociones"
-        tools:layout="@layout/fragment_promociones_clientes" />
+        tools:layout="@layout/fragment_promociones_clientes" >
+        <action
+            android:id="@+id/action_nav_promocionesclientes_to_catalogomenuCliente"
+            app:destination="@id/catalogomenuCliente" />
+        <action
+            android:id="@+id/action_nav_promocionesclientes_to_nav_habitacionesclientes"
+            app:destination="@id/nav_habitacionesclientes" />
+        <action
+            android:id="@+id/action_nav_promocionesclientes_to_misreservasClientes"
+            app:destination="@id/misreservasClientes" />
+    </fragment>
     <fragment
         android:id="@+id/catalogomenuCliente"
         android:name="com.example.hotelitoreservacionfacilito.app.cliente.fragmet.CatalogomenuCliente"
         android:label="Catalogo de Menu"
-        tools:layout="@layout/fragment_catalogomenu_cliente" />
+        tools:layout="@layout/fragment_catalogomenu_cliente" >
+        <action
+            android:id="@+id/action_catalogomenuCliente_to_nav_habitacionesclientes"
+            app:destination="@id/nav_habitacionesclientes" />
+        <action
+            android:id="@+id/action_catalogomenuCliente_to_nav_promocionesclientes"
+            app:destination="@id/nav_promocionesclientes" />
+        <action
+            android:id="@+id/action_catalogomenuCliente_to_misreservasClientes"
+            app:destination="@id/misreservasClientes" />
+    </fragment>
     <fragment
         android:id="@+id/insertarReservaHabitacionCliente"
         android:name="com.example.hotelitoreservacionfacilito.app.cliente.fragmet.InsertarReservaHabitacionCliente"
         android:label="Reserva"
         tools:layout="@layout/fragment_insertar_reserva_habitacion_cliente" />
+    <fragment
+        android:id="@+id/misreservasClientes"
+        android:name="com.example.hotelitoreservacionfacilito.app.cliente.fragmet.MisreservasClientes"
+        android:label="Mis Reservas"
+        tools:layout="@layout/fragment_misreservas_clientes" >
+        <action
+            android:id="@+id/action_misreservasClientes_to_nav_promocionesclientes"
+            app:destination="@id/nav_promocionesclientes" />
+        <action
+            android:id="@+id/action_misreservasClientes_to_catalogomenuCliente"
+            app:destination="@id/catalogomenuCliente" />
+        <action
+            android:id="@+id/action_misreservasClientes_to_nav_habitacionesclientes"
+            app:destination="@id/nav_habitacionesclientes" />
+    </fragment>
 </navigation>

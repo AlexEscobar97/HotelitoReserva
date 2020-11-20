@@ -2,6 +2,7 @@ package com.example.hotelitoreservacionfacilito.adapters.Cliente;
 
 import android.app.Activity;
 import android.content.Context;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,6 +32,7 @@ public class RecycleHabitacionClientes extends RecyclerView.Adapter<RecycleHabit
     private List<Habitacion> lista;
     private Context context;
     FragmentActivity fragmentActivity;
+    private FragmentManager fragmentManager;
 
     public RecycleHabitacionClientes(List<Habitacion> lista,Context context,FragmentActivity fragmentActivity) {
         this.lista = lista;
@@ -87,6 +89,10 @@ public class RecycleHabitacionClientes extends RecyclerView.Adapter<RecycleHabit
                 public void onClick(View v) {
                    // MantenimientoCliente mantenimientoCliente = new MantenimientoCliente();
                     //showFragment(fragmentActivity, new InsertarReservaHabitacionCliente());
+                    String nombre = habitacion.getNombreHabitacion();
+                    Bundle DatosHabitaciones = new Bundle();
+                    DatosHabitaciones.putString("nombreHabitacion", nombre);
+                    fragmentManager.getFragment(DatosHabitaciones, "keyhabitacionC");
                     navController.navigate(R.id.insertarReservaHabitacionCliente);
                     Logued.habitacionLogued = habitacion;
                 }

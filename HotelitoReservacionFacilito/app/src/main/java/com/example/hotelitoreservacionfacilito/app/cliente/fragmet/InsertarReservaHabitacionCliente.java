@@ -3,7 +3,10 @@ package com.example.hotelitoreservacionfacilito.app.cliente.fragmet;
 import android.app.DatePickerDialog;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentResultListener;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,6 +25,7 @@ import java.util.Calendar;
 public class InsertarReservaHabitacionCliente extends Fragment {
 
     View viewGlobal;
+
     EditText r_nombrecliente;
     TextInputLayout r_nombrecliente2;
     Button crear_reserva;
@@ -30,9 +34,12 @@ public class InsertarReservaHabitacionCliente extends Fragment {
     EditText edtHabitacion;
 
 
+
     public InsertarReservaHabitacionCliente() {
         // Required empty public constructor
     }
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

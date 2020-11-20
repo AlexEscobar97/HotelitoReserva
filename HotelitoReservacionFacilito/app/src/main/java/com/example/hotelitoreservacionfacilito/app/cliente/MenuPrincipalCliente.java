@@ -50,7 +50,8 @@ public class MenuPrincipalCliente extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_habitacionesclientes, R.id.nav_promocionesclientes, R.id.catalogomenuCliente)
+                R.id.nav_habitacionesclientes, R.id.nav_promocionesclientes, R.id.catalogomenuCliente,
+                R.id.misreservasClientes)
                 .setOpenableLayout(drawer)
                 .build();
 

@@ -13,6 +13,10 @@
             android:icon="@drawable/mejorprecio"
             android:title="PROMOCIONES" />
         <item
+            android:id="@+id/misreservasClientes"
+            android:icon="@drawable/tipohabitacion"
+            android:title="MIS RESERVAS" />
+        <item
             android:id="@+id/catalogomenuCliente"
             android:icon="@drawable/cartadevino"
             android:title="MENU" />

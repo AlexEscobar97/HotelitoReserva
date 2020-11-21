@@ -14,7 +14,7 @@ public class Reserva{
     private Double total;
     private Cliente idCliente;
     private Habitacion idHabitacion;
-    private PromocionHabitacion idPromocionHabitacion;
+    private PromocionHabitacion idPromocion;
     private EstadoReserva idEstado;
 
     public Reserva() {
@@ -69,11 +69,11 @@ public class Reserva{
     }
 
     public PromocionHabitacion getIdPromocion() {
-        return idPromocionHabitacion;
+        return idPromocion;
     }
 
-    public void setIdPromocion(PromocionHabitacion idPromocionHabitacion) {
-        this.idPromocionHabitacion = idPromocionHabitacion;
+    public void setIdPromocion(PromocionHabitacion idPromocion) {
+        this.idPromocion = idPromocion;
     }
 
     public EstadoReserva getIdEstado() {
@@ -86,7 +86,7 @@ public class Reserva{
 
     @Override
     public String toString() {
-        return "Reserva{" + "idReserva=" + idReserva + ", fechaInicio=" + fechaInicio + ", fechaFin=" + fechaFin + ", total=" + total + ", idCliente=" + idCliente + ", idHabitacion=" + idHabitacion + ", idPromocion=" + idPromocionHabitacion + ", idEstado=" + idEstado + '}';
+        return "Reserva{" + "idReserva=" + idReserva + ", fechaInicio=" + fechaInicio + ", fechaFin=" + fechaFin + ", total=" + total + ", idCliente=" + idCliente + ", idHabitacion=" + idHabitacion + ", idPromocion=" + idPromocion + ", idEstado=" + idEstado + '}';
     }
 
 }

@@ -89,10 +89,10 @@ public class RecycleHabitacionClientes extends RecyclerView.Adapter<RecycleHabit
                 public void onClick(View v) {
                    // MantenimientoCliente mantenimientoCliente = new MantenimientoCliente();
                     //showFragment(fragmentActivity, new InsertarReservaHabitacionCliente());
-                    String nombre = habitacion.getNombreHabitacion();
+                    /*String nombre = habitacion.getNombreHabitacion();
                     Bundle DatosHabitaciones = new Bundle();
                     DatosHabitaciones.putString("nombreHabitacion", nombre);
-                    fragmentManager.getFragment(DatosHabitaciones, "keyhabitacionC");
+                    fragmentManager.getFragment(DatosHabitaciones, "keyhabitacionC");*/
                     navController.navigate(R.id.insertarReservaHabitacionCliente);
                     Logued.habitacionLogued = habitacion;
                 }

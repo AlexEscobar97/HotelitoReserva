@@ -1,12 +1,13 @@
 package com.example.hotelitoreservacionfacilito.app.cliente.fragmet;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentResultListener;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,12 +15,21 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.hotelitoreservacionfacilito.Logued;
 import com.example.hotelitoreservacionfacilito.R;
+import com.example.hotelitoreservacionfacilito.models.Cliente;
+import com.example.hotelitoreservacionfacilito.models.EstadoReserva;
+import com.example.hotelitoreservacionfacilito.models.Habitacion;
+import com.example.hotelitoreservacionfacilito.models.PromocionHabitacion;
+import com.example.hotelitoreservacionfacilito.models.Reserva;
+import com.example.hotelitoreservacionfacilito.service.ReservaService;
 import com.google.android.material.textfield.TextInputLayout;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 
 public class InsertarReservaHabitacionCliente extends Fragment {
@@ -34,6 +44,9 @@ public class InsertarReservaHabitacionCliente extends Fragment {
     EditText edtHabitacion;
 
 
+    SimpleDateFormat ffecha = new SimpleDateFormat("yyyy-MM-dd");
+
+    AgregarReserva agregarReserva = new AgregarReserva();
 
     public InsertarReservaHabitacionCliente() {
         // Required empty public constructor
@@ -99,8 +112,77 @@ public class InsertarReservaHabitacionCliente extends Fragment {
 
         edtHabitacion.setText(""+Logued.habitacionLogued.getIdHabitacion());
         crear_reserva = viewGlobal.findViewById(R.id.crear_reserva);
+
+        crear_reserva.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                agregarReserva.execute();
+            }
+        });
         return  viewGlobal;
     }
 
+    public void reinicarAsysnc(){
+        agregarReserva.cancel(true);
+        agregarReserva = new AgregarReserva();
+    }
+
+    public class AgregarReserva extends AsyncTask<String, String, Reserva> {
+
+        @Override
+        protected void onProgressUpdate(String... values) {
+            super.onProgressUpdate(values);
+        }
+
+        @Override
+        protected Reserva doInBackground(String... strings) {
+            Reserva reserva = new Reserva();
+            Cliente cliente = new Cliente();
+            Habitacion habitacion = new Habitacion();
+            PromocionHabitacion promocionHabitacion = new PromocionHabitacion();
+            EstadoReserva estado = new EstadoReserva();
+            try {
+
+                ReservaService reservaService = new ReservaService();
+                reserva.setIdReserva(0);
+                reserva.setFechaInicio(ffecha.parse(edtFechaInicio.getText().toString().trim()));
+                reserva.setFechaFin(ffecha.parse(edtFechaFinal.getText().toString().trim()));
+                reserva.setTotal(0.0);
+                cliente.setIdCliente(Logued.clienteLogued.getIdCliente());
+                habitacion.setIdHabitacion(Logued.habitacionLogued.getIdHabitacion());
+                //promocionHabitacion.setIdPromHab(null);
+                estado.setIdEstadoReserva(1);
+
+                reserva.setIdCliente(cliente);
+                reserva.setIdHabitacion(habitacion);
+                reserva.setIdEstado(estado);
+
+
+                reservaService.crearReserva(reserva);
+            }catch (Exception e){
+                System.out.println("Error al crear Reserva: " +e.getMessage());
+            }
+            return reserva;
+        }
+
+        @Override
+        protected void onPostExecute(Reserva reserva) {
+            super.onPostExecute(reserva);
+            try {
+                if(!(reserva == null)){
+                    //RecyclerClientes adapter = new RecyclerClientes(clientes, getApplicationContext());
+                    //rvClientes.setLayoutManager(new LinearLayoutManager(getApplicationContext(), RecyclerView.VERTICAL, false));
+                    //rvClientes.setAdapter(adapter);
+                    Toast.makeText(getContext(), "Reserva Agregado" , Toast.LENGTH_SHORT).show();
+                    //Intent i = new Intent(getContext(), .class);
+                    //i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    //startActivity(i);
+                }
+                reinicarAsysnc();
+            }catch (Throwable throwable){
+                System.out.println("Error al imprimir al agregar reserva: " +throwable.getMessage());
+            }
+        }
+    }
 
 }
